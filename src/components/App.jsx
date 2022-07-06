@@ -1,3 +1,6 @@
+import {Component} from 'react';
+import  FeedbackOptions from './FeedbackOptions/FeedbackOptions'
+
 export class App extends Component {
 
   state = {
@@ -6,14 +9,15 @@ export class App extends Component {
     bad: 0
   }
   
+  onLeaveFeedback = option => {
+    return this.setState({ [option]: this.state[option] + 1 });
+};
   
   render() {
+    const options = Object.keys(this.state);
     return (
    <>
-   <p>Please leave feedback</p>
-   <button>Good</button>
-   <button>Neutral</button>
-   <button>Bad</button>
+<FeedbackOptions options={options}/>
    </>
       )
   }
