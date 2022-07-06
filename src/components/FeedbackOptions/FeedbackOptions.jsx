@@ -1,8 +1,18 @@
-function FeedbackOptions({options}) {
-    console.log('================================ {options}', options);
-    return (<> 
-    {options}
-    </>);
+function FeedbackOptions({ options, onLeaveFeedback }) {
+    return (
+        <div>
+            {options.map(option => (
+                <button
+                    key={option}
+                    type="button"
+                    onClick={() => onLeaveFeedback(option)}>
+                    {option}
+                </button>
+            ))
+            }
+        </div>
+    );
 }
+
 
 export default FeedbackOptions;

@@ -9,7 +9,7 @@ export class App extends Component {
     bad: 0
   }
   
-  onLeaveFeedback = option => {
+  handleChosenOption = option => {
     return this.setState({ [option]: this.state[option] + 1 });
 };
   
@@ -17,7 +17,7 @@ export class App extends Component {
     const options = Object.keys(this.state);
     return (
    <>
-<FeedbackOptions options={options}/>
+<FeedbackOptions options={options} onLeaveFeedback={this.handleChosenOption}/>
    </>
       )
   }
