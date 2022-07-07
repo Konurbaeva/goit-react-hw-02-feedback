@@ -13,6 +13,15 @@ export class App extends Component {
     return this.setState({ [option]: this.state[option] + 1 });
 };
   
+// Вынеси блок кнопок в компонент <FeedbackOptions options={} onLeaveFeedback={}>
+// 9:27
+// Anna  [1:42 PM]
+// У меня в options={} передается массив
+// const options = Object.keys(this.state);
+// А в onLeaveFeedback={} функция обработчик
+// onLeaveFeedback={this.handleChosenOption}, которая обновляет state в App при нажатии любой опции.
+
+
   render() {
     const options = Object.keys(this.state);
     return (
